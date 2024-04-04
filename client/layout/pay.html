@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../style.scss">
+  <title>NNSHOP</title>
+</head>
+
+<body>
+  <section class="login">
+    <div class="login-wrapper">
+      <span class="login-close">X</span>
+      <form action="" class="login-form">
+        <h1 class="login_title">LOGIN</h1>
+        <div class="login-item">
+          <label for="" class="login-item_name">Username</label>
+          <input type="text" class="login-item_input">
+        </div>
+        <div class="login-item">
+          <label for="" class="login-item_name">Password</label>
+          <input type="password" class="login-item_input">
+        </div>
+        <div class="login-btn">
+          <button type="submit" class="login-btn_item">Login</button>
+        </div>
+        <div class="login-different">
+          <a href="#" class="login-different_link"><button class="login-different_fb"> <span
+                class="login-different_fb-icon">f</span>Facebook</button></a>
+          <a href="#" class="login-different_link"><button class="login-different_gg"><span
+                class="login-different_gg-icon">G</span>Google</button></a>
+        </div>
+      </form>
+    </div>
+  </section>
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="header-logo">
+          <img src="../image/Frame 168.png" />
+        </div>
+        <div class="header-mobile">
+          <label for="" class="header-mobile_bars" id="checkopen"><i class="fa-solid fa-bars"></i></label>
+        </div>
+        <nav class="header-nav">
+          <ul class="main-menu">
+            <div class="header_close">
+              <label for="" id="checkclose"><i class="fa-solid fa-x"></i></label>
+            </div>
+            <li class="main-menu_item"><a href="../index.html" class="main-menu_link">Home</a></li>
+            <li class="main-menu_item"><a href="./shop.html" class="main-menu_link">Shop</a></li>
+            <li class="main-menu_item"><a href="" class="main-menu_link">About</a></li>
+            <li class="main-menu_item"><a href="" class="main-menu_link">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-block">
+          <div class="header-user">
+            <span class="header-block_icon"><i class="fa-regular fa-user"></i></span>
+            <div class="header-block-dropmenu">
+              <button class="header-block-dropmenu_btn">Đăng Nhập</button>
+            </div>
+          </div>
+          <div class="header-search">
+            <span class="header-block_icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+          </div>
+          <div class="header-wishlish">
+            <span class="header-block_icon"><i class="fa-regular fa-heart"></i></span>
+          </div>
+          <div class="header-cart">
+            <span class="header-block_icon"><i class="fa-solid fa-cart-shopping"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="banner-shop">
+    <img src="https://picsum.photos/id/29/1519/350" alt="" srcset="">
+  </section>
+  <section class="pay">
+    <div class="container">
+      <div class="pay-inner">
+        <div class="pay-fill">
+          <h1 class="pay-fill_title">Billing details</h1>
+          <form action="" class="pay-form">
+            <div class="pay-form-fullname">
+              <div class="pay-form-item">
+                <label for="" class="pay-form_name">First Name</label>
+                <input type="text" class="pay-form_input-name">
+              </div>
+              <div class="pay-form-item">
+                <label for="" class="pay-form_name">Last Name</label>
+                <input type="text" class="pay-form_input-name">
+              </div>
+            </div>
+            <div class="pay-form-item">
+              <label for="" class="pay-form_name">Company Name (Optional)</label>
+              <input type="text" class="pay-form_input">
+            </div>
+            <div class="pay-form-item">
+              <label for="" class="pay-form_name">Country / Region</label>
+              <select class="pay-form_select" name="" id="">
+                <option value="">Ha Noi</option>
+                <option value="">Ho Chi Minh</option>
+              </select>
+            </div>
+            <div class="pay-form-item">
+              <label for="" class="pay-form_name">Street address</label>
+              <input type="text" class="pay-form_input">
+            </div>
+            <div class="pay-form-item">
+              <label for="" class="pay-form_name">Town / City</label>
+              <input type="text" class="pay-form_input">
+            </div>
+            <div class="pay-form-item">
+              <label for="" class="pay-form_name">Province</label>
+              <select class="pay-form_select" name="" id="">
+                <option value="">Western Province</option>
+                <option value="">Ho Chi Minh</option>
+              </select>
+            </div>
+            <div class="pay-form-item">
+              <label for="" class="pay-form_name">ZIP code</label>
+              <input type="text" class="pay-form_input">
+            </div>
+            <div class="pay-form-item">
+              <label for="" class="pay-form_name">Phone</label>
+              <input type="text" class="pay-form_input">
+            </div>
+            <div class="pay-form-item">
+              <label for="" class="pay-form_name"></label>
+              <input type="text" class="pay-form_input" placeholder="Additional information">
+            </div>
+          </form>
+        </div>
+        <div class="pay-content">
+          <div class="pay-content-info">
+            <div class="pay-content-item">
+              <span class="pay-content-item_nameproduct">Product</span>
+              <span class="pay-content-item_nameproduct">Subtotal</span>
+            </div>
+            <div class="pay-content-item">
+              <span class="pay-content-item_name">Asgaard sofa <span class="pay-content-item_quantity">x 1</span></span>
+              <span class="pay-content-item_price">25.000.000đ</span>
+            </div>
+            <div class="pay-content-item">
+              <span class="pay-content-item_title"> Subtotal </span>
+              <span class="pay-content-item_price">25.000.000đ</span>
+            </div>
+            <div class="pay-content-item">
+              <span class="pay-content-item_title">Toal</span>
+              <span class="pay-content-item_total">25.000.000đ</span>
+            </div>
+          </div>
+          <div class="pay-bank">
+            <div class="pay-bank-item">
+              <div class="pay-bank_input">
+                <input class="pay-bank_radio pay-bank_one" type="radio" name="banking" id="banking_one"><label
+                  for="banking_one" class="banking_one-lb">Direct Bank Transfer</label>
+              </div>
+              <div class="pay-bank_description des-one">
+                <p class="pay-bank_description-item">Make your payment directly into our bank account. Please use your
+                  Order
+                  ID as the payment reference. Your order will
+                  not be shipped until the funds have cleared in our account.
+                </p>
+              </div>
+            </div>
+            <div class="pay-bank-item">
+              <div class="pay-bank_input">
+                <input class="pay-bank_radio pay-bank_two" type="radio" name="banking" id="banking_two"><label
+                  for="banking_two" class="banking_two-lb">Direct Bank Transfer</label>
+              </div>
+              <div class="pay-bank_description des-two">
+                <p class="pay-bank_description-item">Make your payment directly into our bank account. Please use your
+                  Order
+                  ID as the payment reference. Your order will
+                  not be shipped until the funds have cleared in our account.
+                </p>
+              </div>
+            </div>
+            <div class="pay-bank-item">
+              <div class="pay-bank_input">
+                <input class="pay-bank_radio pay-bank_three" type="radio" name="banking" id="banking_three"><label
+                  for="banking_three" class="banking_three-lb">Direct Bank Transfer</label>
+              </div>
+              <div class="pay-bank_description des-three">
+                <p class="pay-bank_description-item">Make your payment directly into our bank account. Please use
+                  your Order ID as the payment reference. Your order will
+                  not be shipped until the funds have cleared in our account.
+                </p>
+              </div>
+            </div>
+            <div class="pay-bank-last">
+              <p class="pay-bank-last_text">Your personal data will be used to support your experience throughout this
+                website, to manage access to your account,
+                and for other purposes described in our <strong>privacy policy</strong></p>
+            </div>
+            <div class="pay-bank-order">
+              <button class="pay-bank_btn">Place Order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="service service-shop">
+    <div class="list-service">
+      <div class="list-service-item">
+        <div class="list-service_icon">
+          <img src="../image/Group.jpg" alt="">
+        </div>
+        <div class="list-service_content">
+          <h1 class="list-service_title">High Quality</h1>
+          <p class="list-service_text">crafted from top materials</p>
+        </div>
+      </div>
+      <div class="list-service-item">
+        <div class="list-service_icon">
+          <img src="../image/guarantee.jpg" alt="">
+        </div>
+        <div class="list-service_content">
+          <h1 class="list-service_title">Warranty Protection</h1>
+          <p class="list-service_text">Over 2 years</p>
+        </div>
+      </div>
+      <div class="list-service-item">
+        <div class="list-service_icon">
+          <img src="../image/shipping.jpg" alt="">
+        </div>
+        <div class="list-service_content">
+          <h1 class="list-service_title">Free Shipping</h1>
+          <p class="list-service_text">Order over 150 $</p>
+        </div>
+      </div>
+      <div class="list-service-item">
+        <div class="list-service_icon">
+          <img src="../image/customer-support.jpg" alt="">
+        </div>
+        <div class="list-service_content">
+          <h1 class="list-service_title">24 / 7 Support</h1>
+          <p class="list-service_text">Dedicated support</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-content">
+          <div class="footer_logo">
+            <h1 class="footer_title">Funiro.</h1>
+            <p class="footer_des">400 University Drive Suite 200 Coral <br> Gables,<br>
+              FL 33134 USA</p>
+          </div>
+          <div class="footer-wrapper">
+            <div class="footer-path">
+              <h3 class="footer_name">Links</h3>
+              <ul class="footer-list">
+                <li class="footer-item"><a href="#" class="footer_link">Home</a></li>
+                <li class="footer-item"><a href="#" class="footer_link">Shop</a></li>
+                <li class="footer-item"><a href="#" class="footer_link">About</a></li>
+                <li class="footer-item"><a href="#" class="footer_link">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-path">
+              <h3 class="footer_name">Help</h3>
+              <ul class="footer-list">
+                <li class="footer-item"><a href="#" class="footer_link">Payment Options</a></li>
+                <li class="footer-item"><a href="#" class="footer_link">Returns</a></li>
+                <li class="footer-item"><a href="#" class="footer_link">Privacy Policies</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-contact">
+            <h3 class="footer_name">Newsletter</h3>
+            <form action="" class="footer-form">
+              <input type="text" class="footer-form_input" placeholder="Enter Your Email Address">
+              <button class="footer_btn">SUBSCRIBE</button>
+            </form>
+          </div>
+          <hr class="footer_border">
+        </div>
+        <div class="footer-extra">
+          2023 furino. All rights reverved
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const checkopen = document.querySelector('#checkopen');
+    const checkclose = document.querySelector('#checkclose');
+    const headernav = document.querySelector('.header-nav');
+    const close = document.querySelector(".login-close");
+    const open = document.querySelector(".header-block-dropmenu_btn");
+    const sectionlogin = document.querySelector(".login");
+    const radio1 = document.querySelector('#banking_one');
+    const desone = document.querySelector('.des-one');
+    const radio2 = document.querySelector('#banking_two');
+    const destwo = document.querySelector('.des-two');
+    const radio3 = document.querySelector('#banking_three');
+    const desthree = document.querySelector('.des-three');
+    checkopen.addEventListener('click', () => {
+      // headernav.style.display = 'Block';
+      headernav.style.left = 0;
+      headernav.style.opacity = 1;
+    })
+    checkclose.addEventListener('click', () => {
+      // headernav.style.display = 'Block';
+      headernav.style.left = '100%';
+      headernav.style.opacity = 0;
+    })
+    close.addEventListener("click", () => {
+      document.querySelector(".login").style.bottom = "100%";
+      document.querySelector(".login").style.opacity = "0";
+      document.querySelector(".login").style.height = "auto";
+
+    })
+    open.addEventListener("click", () => {
+      document.querySelector(".login").style.bottom = "0"
+      document.querySelector(".login").style.opacity = "1"
+      document.querySelector(".login").style.height = "100vh";
+    })
+    radio1.addEventListener('click', (e) => {
+      desone.style.display = "Block";
+      destwo.style.display = "None";
+      desthree.style.display = "None";
+
+    })
+    radio2.addEventListener('click', (e) => {
+      desone.style.display = "None";
+      destwo.style.display = "Block";
+      desthree.style.display = "None";
+    })
+    radio3.addEventListener('click', (e) => {
+      desone.style.display = "None";
+      destwo.style.display = "None";
+      desthree.style.display = "Block";
+    })
+  </script>
+</body>
+
+</html>
