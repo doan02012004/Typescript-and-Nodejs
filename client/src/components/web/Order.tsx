@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Order = () => {
   return (
@@ -25,99 +26,47 @@ const Order = () => {
               <div className="order-content">
               <div className="order-card">
                     <h3 className='order-card_title'>Đơn Hàng 1</h3>
-                    <div className="oder-card-content">
-                        <div className="oder-card-content_infor">
-                            <div className="oder-card-content-item">
-                                <span className='oder-card-content-item_name'>Fullname:</span>
-                                <span className='oder-card-content-item_text'>Bùi Văn Đoàn</span>
+                    <div className="order-card-content">
+                        <div className="order-card-content_infor">
+                            <div className="order-card-content-item">
+                                <span className='order-card-content-item_name'>Fullname:</span>
+                                <span className='order-card-content-item_text'>Bùi Văn Đoàn</span>
                             </div>
-                            <div className="oder-card-content-item">
-                                <span className='oder-card-content-item_name'>Phone:</span>
-                                <span className='oder-card-content-item_text'>01234567</span>
+                            <div className="order-card-content-item">
+                                <span className='order-card-content-item_name'>Phone:</span>
+                                <span className='order-card-content-item_text'>01234567</span>
                             </div>
-                            <div className="oder-card-content-item">
-                                <span className='oder-card-content-item_name'>Email:</span>
-                                <span className='oder-card-content-item_text'>doana1k24@gmail.com</span>
+                            <div className="order-card-content-item">
+                                <span className='order-card-content-item_name'>Email:</span>
+                                <span className='order-card-content-item_text'>doana1k24@gmail.com</span>
                             </div>
-                            <div className="oder-card-content-item">
-                                <span className='oder-card-content-item_name'>City:</span>
-                                <span className='oder-card-content-item_text'>Hà Nội</span>
+                            <div className="order-card-content-item">
+                                <span className='order-card-content-item_name'>City:</span>
+                                <span className='order-card-content-item_text'>Hà Nội</span>
                             </div>
-                        </div>
-                        <div className="oder-card-content_extra">
-                            <span className='oder-card-content_extra_item'><i className="fa-solid fa-basket-shopping"></i></span>
-                        </div>
-                    </div>
-                    <div className="oder-card-action">
-                        <button className='oder-card-action_btn'>Đã Nhận Hàng</button>
-                        <button className='oder-card-action_btn'>Chi Tiết</button>
-                    </div>
-                </div>
-              </div>
-              <div className="order-content">
-              <div className="order-card">
-                    <h3 className='order-card_title'>Đơn Hàng 1</h3>
-                    <div className="oder-card-content">
-                        <div className="oder-card-content_infor">
-                            <div className="oder-card-content-item">
-                                <span className='oder-card-content-item_name'>Fullname:</span>
-                                <span className='oder-card-content-item_text'>Bùi Văn Đoàn</span>
+                            <div className="order-card-content-item">
+                                <span className='order-card-content-item_name'>Ngày đặt hàng:</span>
+                                <span className='order-card-content-item_text'>20/10/2004</span>
                             </div>
-                            <div className="oder-card-content-item">
-                                <span className='oder-card-content-item_name'>Phone:</span>
-                                <span className='oder-card-content-item_text'>01234567</span>
-                            </div>
-                            <div className="oder-card-content-item">
-                                <span className='oder-card-content-item_name'>Email:</span>
-                                <span className='oder-card-content-item_text'>doana1k24@gmail.com</span>
-                            </div>
-                            <div className="oder-card-content-item">
-                                <span className='oder-card-content-item_name'>City:</span>
-                                <span className='oder-card-content-item_text'>Hà Nội</span>
+                            <div className="order-card-content-item">
+                                <span className='order-card-content-item_name'>Trạng Thái:</span>
+                                <span className='order-card-content-item_status'>Pending</span>
                             </div>
                         </div>
-                        <div className="oder-card-content_extra">
-                            <span className='oder-card-content_extra_item'><i className="fa-solid fa-basket-shopping"></i></span>
+                        <div className="order-card-content_extra">
+                            <span className='order-card-content_extra_item'><i className="fa-solid fa-basket-shopping"></i></span>
                         </div>
                     </div>
-                    <div className="oder-card-action">
-                        <button className='oder-card-action_btn'>Đã Nhận Hàng</button>
-                        <button className='oder-card-action_btn'>Chi Tiết</button>
+                    <div className="order-card-action">
+                        <div className="order-card-action-status">
+                            <button className='order-card-action_btn btn btn-danger'>Hủy Đơn Hàng</button>
+                            <button className='order-card-action_btn btn btn-primary'>Đã Nhận Hàng</button>
+                        </div>
+                       <Link to=''> <button className='order-card-action_btn  btn btn-warning'>Chi Tiết</button></Link>
                     </div>
                 </div>
               </div>
-              <div className="order-content">
-              <div className="order-card">
-                    <h3 className='order-card_title'>Đơn Hàng 1</h3>
-                    <div className="oder-card-content">
-                        <div className="oder-card-content_infor">
-                            <div className="oder-card-content-item">
-                                <span className='oder-card-content-item_name'>Fullname:</span>
-                                <span className='oder-card-content-item_text'>Bùi Văn Đoàn</span>
-                            </div>
-                            <div className="oder-card-content-item">
-                                <span className='oder-card-content-item_name'>Phone:</span>
-                                <span className='oder-card-content-item_text'>01234567</span>
-                            </div>
-                            <div className="oder-card-content-item">
-                                <span className='oder-card-content-item_name'>Email:</span>
-                                <span className='oder-card-content-item_text'>doana1k24@gmail.com</span>
-                            </div>
-                            <div className="oder-card-content-item">
-                                <span className='oder-card-content-item_name'>City:</span>
-                                <span className='oder-card-content-item_text'>Hà Nội</span>
-                            </div>
-                        </div>
-                        <div className="oder-card-content_extra">
-                            <span className='oder-card-content_extra_item'><i className="fa-solid fa-basket-shopping"></i></span>
-                        </div>
-                    </div>
-                    <div className="oder-card-action">
-                        <button className='oder-card-action_btn'>Đã Nhận Hàng</button>
-                        <button className='oder-card-action_btn'>Chi Tiết</button>
-                    </div>
-                </div>
-              </div>
+              
             </div>
         
         </div>

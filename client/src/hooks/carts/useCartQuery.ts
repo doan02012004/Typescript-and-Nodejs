@@ -1,15 +1,18 @@
 
 import { useQuery } from '@tanstack/react-query'
 import { getAllCarts } from '../../services/carts'
+import useLocalStorage from '../auth/useStorage'
 
 
 const useCartQuery = () => {
     
-    const user = JSON.parse(localStorage.getItem('user'));
+    const [value,] = useLocalStorage('user',{})
+    
+    const userId = value?.data._id;
+    
     const query = useQuery({
-        queryKey:["CARTS_KEY", user],
+        queryKey:["CARTS_KEY", userId ],
         queryFn: async()=>{
-            const userId = user?.data?._id;
             try {
                 const res = await getAllCarts(userId)
                 return res.data

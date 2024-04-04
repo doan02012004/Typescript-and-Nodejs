@@ -22,11 +22,11 @@ const orderSchema = new mongoose.Schema({
         ref: "users",
     },
     items: [OrderItemSchema],
-    orderNumber: {
-        type: String,
-        auto: true,
-        unique: true,
-    },
+    // orderNumber: {
+    //     type: String,
+    //     auto: true,
+    //     unique: true,
+    // },
     customerInfo: {
         type: {
             name: {
@@ -58,7 +58,8 @@ const orderSchema = new mongoose.Schema({
         enum: ["pending", "confirmed", "shipped", "delivered", "cancelled"],
         default: "pending",
     },
-});
+},
+{timestamps:true, versionKey:false});
 
 const OrderModel =  mongoose.model("order", orderSchema);
 module.exports = OrderModel

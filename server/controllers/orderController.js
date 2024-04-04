@@ -1,12 +1,19 @@
 const Order = require('../models/Order');
+const cartsModel = require('../models/Carts')
 const httpstatuscode = require('http-status-codes');
 const StatusCodes = httpstatuscode.StatusCodes
 // Controller để tạo mới một đơn hàng
  const createOrder = async (req, res) => {
-  
         try {
             const { userId, items, totalPrice, customerInfo } = req.body;
             const order = await Order.create({ userId, items, totalPrice, customerInfo });
+              // Tạo hoặc cập nhật cart với trường products là một mảng rỗng
+            await cartsModel.findOneAndUpdate(
+            { userId },
+            { $set: {products: [] } }, // Tạo userId mới nếu không tìm thấy
+            { upsert: true, new: true }
+        );
+            
             return res.status(StatusCodes.CREATED).json(order);
         } catch (error) {
             return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error.message });

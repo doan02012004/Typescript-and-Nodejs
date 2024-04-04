@@ -1,13 +1,16 @@
 import { useState } from "react";
 import useCartQuery from "../../hooks/carts/useCartQuery";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import useLocalStorage from "../../hooks/auth/useStorage";
 import instance from "../../config/axios";
+import { useNavigate } from "react-router-dom";
 
 
 
 const BillingdDetail = () => {
+  const navigate = useNavigate()
+  const queryClient = useQueryClient()
   const [value,] = useLocalStorage('user',{})
   const userId = value.data._id;
     const [formData, setFormData] = useState({
@@ -33,8 +36,14 @@ const BillingdDetail = () => {
                 }
         },
         onSuccess:()=>{
-            alert("Bạn đặt hàng thành công")
+            queryClient.invalidateQueries({queryKey:["CARTS_KEY",userId]})
+            alert("Bạn đặt hàng thành công");
+            navigate('/check-order')
         },
+        onError: (error) => {
+          console.error('Error placing order:', error);
+          // Xử lý lỗi nếu cần
+      }
       })
       const onHandleOrder = () => {
         mutation.mutate({
@@ -43,7 +52,6 @@ const BillingdDetail = () => {
           totalPrice: totalCost,
           customerInfo:formData
         })
-        console.log(formData);
       };
     
      

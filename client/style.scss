@@ -2339,4 +2339,47 @@ img {
     &-list{
         @include gird(2, 30px )
     }
+    &-card{
+        max-width: 450px;
+        height: auto;
+        padding: 30px 10px;
+        background-color: #F9F1E7;
+        border-radius: 10px;
+        transition: 0.35s ease-in-out;
+        &:hover{
+            transform: scale(1.03);
+            box-shadow: 0 0 4px black;
+        }
+        &-content{
+            display: flex;
+            justify-content: space-between;
+            &-item{
+                margin: 5px 0;
+                display: flex;
+                gap:10px;
+                &_name{
+                    font-weight: 600;
+                }
+                &_status{
+                    // font-size: 20px;
+                    font-weight: 600;
+                    color: rgb(21, 161, 68);
+                }
+
+            }
+            &_extra{
+               &_item{
+                font-size: 60px;
+                padding-right: 40px;
+               }
+            }
+        }
+        &-action{
+            padding: 10px 0;
+            width: 85%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
 }
