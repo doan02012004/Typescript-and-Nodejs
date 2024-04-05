@@ -77,7 +77,7 @@ const ProductDetail = ({product}:Props) => {
         </div>
         <div className="product-detail-content">
           <h1 className="product-detail-content_name">{product?.name}</h1>
-          <p className="product-detail-content_price">{product?.price-(product?.price*product?.discount / 100)}đ</p>
+          <p className="product-detail-content_price">{(product?.price-(product?.price*product?.discount / 100)).toLocaleString('vi-VN')} đ</p>
           <div className="product-detail-content-star">
             <div className="product-detail-content-star_item">
               <i className="fa-solid fa-star" />

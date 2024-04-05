@@ -45,13 +45,13 @@ const OrderDetail = () => {
                   <span className="cart-table_name">{order.name}</span>
                 </td>
                 <td>
-                  <span className="cart-table_price">{order.price.toLocaleString('vi-VN')} VNĐ</span>
+                  <span className="cart-table_price">{order.price.toLocaleString('vi-VN')} đ</span>
                 </td>
                 <td className="cart-table_quantity">
                   <input className="cart-table_input" type="text" value={order.quantity} disabled />
                 </td>
                 <td>
-                  <span className="cart-table_total">{(order.price*order.quantity).toLocaleString('vi-VN')} VNĐ</span>
+                  <span className="cart-table_total">{(order.price*order.quantity).toLocaleString('vi-VN')} đ</span>
                 </td>
                 <td>
                  

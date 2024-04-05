@@ -46,8 +46,8 @@ const News = ({products}:Props) => {
                         <span>Category</span>
                       </a>
                       <div className="product-content-price">
-                        <span className="product-content-price_new">{product.price-(product.price*product.discount / 100)}đ</span>
-                        <span className="product-content-price_old">{product.price}đ</span>
+                        <span className="product-content-price_new">{(product.price-(product.price*product.discount / 100)).toLocaleString('vi-VN')} đ</span>
+                        <span className="product-content-price_old">{product.price.toLocaleString('vi-VN')} đ</span>
                       </div>
                     </div>
                     <div className="product-extra">

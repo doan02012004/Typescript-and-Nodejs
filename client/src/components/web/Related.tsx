@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import instance from '../../config/axios'
 import { Link } from 'react-router-dom'
 import { IProduct } from '../../interfaces/IProduct'
+import useCartMutation from '../../hooks/carts/useCartMutation'
 
 
 type Props = {
@@ -21,7 +22,14 @@ const Related = ({product}:Props) => {
                 }
             }
         })
-        
+        const mutation = useCartMutation("addtocart")
+        const onAddToCart = (id:string)=>{
+          const res = {
+              productId: id,
+              quantity: 1
+          }
+          mutation.mutate(res)
+        }
   return (
    <section className="related">
   <div className="container">
@@ -42,13 +50,13 @@ const Related = ({product}:Props) => {
                   <h1 className="product-content_name">{product.name}</h1>
                   <a className="product-content_link" href="#"><span>Category</span></a>
                   <div className="product-content-price">
-                    <span className="product-content-price_new">{product.price-(product.price*product.discount / 100)}đ</span>
-                    <span className="product-content-price_old">{product.price}đ</span>
+                    <span className="product-content-price_new">{(product.price-(product.price*product.discount / 100)).toLocaleString('vi-VN')} đ</span>
+                    <span className="product-content-price_old">{product.price.toLocaleString('vi-VN')} đ</span>
                   </div>
                 </div>
                 <div className="product-extra">
                   <Link to={`/product-detail/${product._id}`} className="product-extra_link"> <button className="product-extra_btn">Quick View</button></Link>
-                  <a href="./cart.html" className="product-extra_link"> <button className="product-extra_btn">Add To Cart</button></a>
+                  <a  className="product-extra_link"> <button className="product-extra_btn" onClick={()=>onAddToCart(product._id)}>Add To Cart</button></a>
                   <div className="product-extra-block">
                     <span>Compare</span>
                     <span>Share</span>

@@ -1,7 +1,8 @@
 
-import { Link, Navigate, NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import useCartQuery from '../../hooks/carts/useCartQuery'
-import useLocalStorage from '../../hooks/auth/useStorage'
+import useLocalStorage from '../../hooks/auth/useStorage';
+import logo from '../../assets/images/Frame 168 (1).png'
 
 const HeaderWeb = () => {
   const navigate = useNavigate()
@@ -30,7 +31,7 @@ const onHandleSignUp = ()=>{
   <div className="container">
     <div className="header-inner">
       <div className="header-logo">
-        <img src="../image/Frame 168.png" />
+        <img src={logo} />
       </div>
       <div className="header-mobile">
         <label  className="header-mobile_bars" id="checkopen"><i className="fa-solid fa-bars" /></label>

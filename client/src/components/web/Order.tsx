@@ -75,7 +75,7 @@ const Order = () => {
                               </div>
                               <div className="order-card-content-item">
                                   <span className='order-card-content-item_name'>Tổng tiền:</span>
-                                  <span className='order-card-content-item_status'>{item.totalPrice.toLocaleString('vi-VN')} VNĐ</span>
+                                  <span className='order-card-content-item_status'>{item.totalPrice.toLocaleString('vi-VN')} đ</span>
                                
                               </div>
                           </div>

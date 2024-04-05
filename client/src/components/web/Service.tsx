@@ -1,4 +1,7 @@
-
+import cup from '../../assets/images/Group.png'
+import chungnhan from '../../assets/images/guarantee.png'
+import shipping from '../../assets/images/shipping.png'
+import customersupport from '../../assets/images/customer-support.png'
 
 const Service = () => {
   return (
@@ -6,7 +9,7 @@ const Service = () => {
   <div className="list-service">
     <div className="list-service-item">
       <div className="list-service_icon">
-        <img src="../image/Group.jpg" alt />
+        <img src={cup}  />
       </div>
       <div className="list-service_content">
         <h1 className="list-service_title">High Quality</h1>
@@ -15,7 +18,7 @@ const Service = () => {
     </div>
     <div className="list-service-item">
       <div className="list-service_icon">
-        <img src="../image/guarantee.jpg" alt />
+        <img src={chungnhan}  />
       </div>
       <div className="list-service_content">
         <h1 className="list-service_title">Warranty Protection</h1>
@@ -24,7 +27,7 @@ const Service = () => {
     </div>
     <div className="list-service-item">
       <div className="list-service_icon">
-        <img src="../image/shipping.jpg" alt />
+        <img src={shipping}  />
       </div>
       <div className="list-service_content">
         <h1 className="list-service_title">Free Shipping</h1>
@@ -33,7 +36,7 @@ const Service = () => {
     </div>
     <div className="list-service-item">
       <div className="list-service_icon">
-        <img src="../image/customer-support.jpg" alt />
+        <img src={customersupport} />
       </div>
       <div className="list-service_content">
         <h1 className="list-service_title">24 / 7 Support</h1>
