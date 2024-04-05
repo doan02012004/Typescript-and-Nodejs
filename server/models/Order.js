@@ -4,6 +4,10 @@ const OrderItemSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    image: {
+        type: String,
+        required: true,
+    },
     price: {
         type: Number,
         required: true,
@@ -34,7 +38,7 @@ const orderSchema = new mongoose.Schema({
                 required: true,
             },
             phone: {
-                type: Number,
+                type: String,
             },
             email: {
                 type: String,
@@ -55,7 +59,7 @@ const orderSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ["pending", "confirmed", "shipped", "delivered", "cancelled"],
+        enum: ["pending", "confirmed", "shipped", "delivered", "cancelled","received"],
         default: "pending",
     },
 },

@@ -8,5 +8,5 @@ export interface IProduct{
     description:string,
     featured:boolean,
     category?:string,
-    tags?:string
+    tags:string
 }

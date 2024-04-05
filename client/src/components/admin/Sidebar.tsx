@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
   return (
@@ -17,20 +18,14 @@ const Sidebar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link d-flex align-items-center gap-2" href="/admin/products">
-             
+            <Link className="nav-link d-flex align-items-center gap-2" to="/admin/products">
               Products
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link d-flex align-items-center gap-2" href="#">
-             Categories
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link d-flex align-items-center gap-2" href="#">
-              Integrations
-            </a>
+            <Link className="nav-link d-flex align-items-center gap-2" to="/admin/order">
+              Order
+            </Link>
           </li>
         </ul>
         <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">

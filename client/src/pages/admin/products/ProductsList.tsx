@@ -12,7 +12,7 @@ const ProductsList = () => {
   }
   return (
    <>
-     <h2>Section title</h2>
+     <h2>Danh Sách Sản Phẩm</h2>
       <div className="table-responsive small">
         <Link to='/admin/products/add' className="btn btn-primary" >Thêm sản phẩm</Link>
         

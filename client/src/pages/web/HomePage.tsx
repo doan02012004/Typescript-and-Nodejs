@@ -7,7 +7,7 @@ import Service from '../../components/web/Service'
 import { useProductQuery } from '../../hooks/products/useProductQuery'
 
 const HomePage = () => {
-    const query = useProductQuery({_limit:2});
+    const query = useProductQuery();
   return (
    <>
    <BannerHome />

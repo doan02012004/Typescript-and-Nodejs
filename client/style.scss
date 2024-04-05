@@ -218,6 +218,9 @@ img {
         list-style: none;
         font-size: 20px;
         font-weight: 500;
+        & .active{
+            color: #B88E2F;
+        }
     }
     &_link{
         text-decoration: none;
@@ -226,8 +229,8 @@ img {
         transition: 0.3s ease-in-out;
         &:hover{
             color: #B88E2F;
-
         }
+       
     }
 
     @include tablet(){

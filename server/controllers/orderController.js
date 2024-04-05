@@ -43,6 +43,21 @@ const StatusCodes = httpstatuscode.StatusCodes
         res.status(500).json({ message: error.message });
     }
 };
+const getOrderByUserId = async (req, res) => {
+    const userId = req.params.userId;
+    try {
+        const order = await Order.find({userId});
+        if (!order) {
+            return res.status(404).json({ message: "Order not found" });
+        }
+        
+       
+
+        res.status(200).json(order);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
 
 // Controller để cập nhật thông tin của một đơn hàng
  const updateOrder = async (req, res) => {
@@ -52,6 +67,25 @@ const StatusCodes = httpstatuscode.StatusCodes
         const updatedOrder = await Order.findByIdAndUpdate(
             orderId,
             { userId, items, totalPrice, status },
+            { new: true }
+        );
+        if (!updatedOrder) {
+            return res.status(404).json({ message: "Order not found" });
+        }
+        res.status(200).json(updatedOrder);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+// Controller để cập nhật trạng thái của một đơn hàng
+const updateOrderStatus = async (req, res) => {
+    const orderId = req.params.id;
+    try {
+        const {status} = req.body;
+        const updatedOrder = await Order.findByIdAndUpdate(
+            orderId,
+            { status },
             { new: true }
         );
         if (!updatedOrder) {
@@ -82,5 +116,7 @@ module.exports = {
     updateOrder,
     getOrderById,
     getAllOrders,
-    createOrder
+    createOrder,
+    getOrderByUserId,
+    updateOrderStatus
 }

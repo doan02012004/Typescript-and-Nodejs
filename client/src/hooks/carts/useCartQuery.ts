@@ -8,14 +8,14 @@ const useCartQuery = () => {
     
     const [value,] = useLocalStorage('user',{})
     
-    const userId = value?.data._id;
+    const userId = value?.data?._id;
     
     const query = useQuery({
         queryKey:["CARTS_KEY", userId ],
         queryFn: async()=>{
             try {
                 const res = await getAllCarts(userId)
-                return res.data
+                return res?.data
             } catch (error) {
                 console.log(error)
             }

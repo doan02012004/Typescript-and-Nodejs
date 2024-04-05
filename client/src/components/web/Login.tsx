@@ -24,7 +24,10 @@ const Login = () => {
                 if(res){
                     alert("Đăng nhập thành công")
                     setValue(res);
-                    onCloseLogin()
+                    onCloseLogin();
+                    setTimeout(()=>{
+                      window.location.reload()
+                    },1000)
                 }
                 return res
             } catch (error) {

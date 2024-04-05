@@ -1,20 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { IProduct } from "../../../interfaces/IProduct";
 import useProductMutation from "../../../hooks/products/useProductMutation";
 import useCategoriesQuery from "../../../hooks/categories/useCategoriesQuery";
+import axios from "axios";
 
 const AddProducts = () => {
+  const [images, setImages] = useState([]);
   const {register,handleSubmit,formState:{errors}}= useForm();
   const categories = useCategoriesQuery()
   
   const mutation = useProductMutation("addproducts")
+  const onChangeImage = async(e)=>{
+    const files = e.target.files
+    const formData = new FormData();
+    let imagesUrl: any[] = [];
+    for (let i = 0; i < files.length; i++) {
+      
+      formData.append('file', files[i]);
+      formData.append('upload_preset', 'i6jgs1ps');
+      try {
+        const response = await axios.post(
+          `https://api.cloudinary.com/v1_1/dwm0cabq4/image/upload`, // Replace 'cloudName' with your Cloudinary cloud name
+          formData
+        );
+       
+        imagesUrl = [...imagesUrl, response.data.secure_url]
+      } catch (error) {
+        console.error('Error uploading images: ', error);
+      }
+  }
+  setImages(imagesUrl)
+}
+
 const onSubmit = async (product:IProduct) =>{
     try {
-      const galleryArray = product.gallery?.split(',').slice(0, 500);
+      // const galleryArray = product.gallery?.split(',').slice(0, 500);
     const tagsArray = product.tags?.split(',').slice(0, 500);
-     product.gallery = galleryArray
-    product.tags = tagsArray
+     product.gallery = images
+    product.tags = tagsArray;
+    
     mutation.mutate(product)
     } catch (error) {
       console.log(error)
@@ -24,7 +49,7 @@ const onSubmit = async (product:IProduct) =>{
     <>
       <div className="container">
         <div className="row">
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit(onSubmit)} encType="multipart/form-data">
             <div className="row">
                 <div className="col-6">
                 <div>
@@ -57,8 +82,9 @@ const onSubmit = async (product:IProduct) =>{
                 <label htmlFor="exampleInputEmail1" className="form-label">
                 Gallery(mỗi ảnh cách nhau bởi dấy phảy ",")
                 </label>
-               <textarea {...register('gallery',{required:true})}id="" cols={40} rows={5}></textarea>
-                {errors.gallery && errors.gallery.type =="required" && (  <div id="emailHelp" className="form-text text-danger"> Không để trống</div>)}
+                <input type="file" onChange={(e)=>onChangeImage(e)}  multiple />
+               {/* <textarea {...register('gallery',{required:true})}id="" cols={40} rows={5}></textarea>
+                {errors.gallery && errors.gallery.type =="required" && (  <div id="emailHelp" className="form-text text-danger"> Không để trống</div>)} */}
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">
