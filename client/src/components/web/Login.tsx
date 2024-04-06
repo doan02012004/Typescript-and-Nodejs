@@ -27,7 +27,7 @@ const Login = () => {
                     onCloseLogin();
                     setTimeout(()=>{
                       window.location.reload()
-                    },1000)
+                    },300)
                 }
                 return res
             } catch (error) {

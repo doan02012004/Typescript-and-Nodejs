@@ -21,10 +21,11 @@ const HeaderWeb = () => {
 
 const onHandleSignUp = ()=>{
   localStorage.removeItem('user');
-  navigate('/')
+  navigate('/');
+  alert("Đã đăng xuất")
   setTimeout(()=>{
     window.location.reload()
-  },1000)
+  },300)
 }
   return (
     <header className="header">
