@@ -15,7 +15,13 @@ const useCartMutation = (action:string) => {
                 try {
                         switch (action) {
                             case "addtocart":
+                                
+                               if(!cart.userId){
+                                alert("Bạn cần đăng nhập !")
+                               }else{
                                 await addToCart(cart)
+                                alert("Đã thêm sản phẩm vào giỏ hàng")
+                               }
                                 break;
                             case "removecart":
                                     await removeItemCart(cart)

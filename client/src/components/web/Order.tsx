@@ -13,12 +13,14 @@ const Order = () => {
  const onHandleStatus = (options:{id:string,status:string})=>{
   mutation.mutate(options)
  }
-
+if(query.isLoading){
+   return <div>...Loading</div>
+}
 
   
   return (
     <section className='order'>
-        <section className="address-page">
+    <section className="address-page">
     <div className="container">
       <div className="address-inner">
         <div className="address-content">

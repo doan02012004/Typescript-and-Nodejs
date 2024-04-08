@@ -3,10 +3,11 @@ import { Link, NavLink, useNavigate } from 'react-router-dom'
 import useCartQuery from '../../hooks/carts/useCartQuery'
 import useLocalStorage from '../../hooks/auth/useStorage';
 import logo from '../../assets/images/Frame 168 (1).png'
+import { ICart } from '../../interfaces/ICart';
 
 const HeaderWeb = () => {
   const navigate = useNavigate()
-  const [check, setCheck] = useLocalStorage('user', {})
+  const [check, ] = useLocalStorage('user', {})
     const onOpenLogin =()=>{
         const loginElement = document.querySelector(".login") as HTMLElement
         loginElement .style.bottom = "0"
@@ -17,7 +18,7 @@ const HeaderWeb = () => {
       const {query} = useCartQuery();
     
       // Tính tổng quantity của tất cả sản phẩm
-        const totalQuantity = query?.data?.reduce((total, cart) => total + cart.quantity, 0);
+        const totalQuantity = query?.data?.reduce((total:number, cart:ICart) => total + cart.quantity, 0);
 
 const onHandleSignUp = ()=>{
   localStorage.removeItem('user');
@@ -73,7 +74,7 @@ const onHandleSignUp = ()=>{
           <span className="header-block_icon"><i className="fa-regular fa-heart" /></span>
         </div>
         <div className="header-cart">
-          <Link to='/carts' className="header-block_icon header-block_icon-carts"><i className="fa-solid fa-cart-shopping" /> <span className='header-block_icon-total'>{totalQuantity }</span></Link>
+          <Link to='/carts' className="header-block_icon header-block_icon-carts"><i className="fa-solid fa-cart-shopping" /> <span className='header-block_icon-total'>{totalQuantity? totalQuantity : "" }</span></Link>
         </div>
       </div>
     </div>

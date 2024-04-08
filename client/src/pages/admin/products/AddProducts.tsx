@@ -7,11 +7,12 @@ import axios from "axios";
 
 const AddProducts = () => {
   const [images, setImages] = useState([]);
+  const [avatar, setAvatar] = useState("")
   const {register,handleSubmit,formState:{errors}}= useForm();
   const categories = useCategoriesQuery()
   
   const mutation = useProductMutation("addproducts")
-  const onChangeImage = async(e)=>{
+  const onChangeGallery = async(e)=>{
     const files = e.target.files
     const formData = new FormData();
     let imagesUrl: any[] = [];
@@ -32,14 +33,29 @@ const AddProducts = () => {
   }
   setImages(imagesUrl)
 }
-
+const onChangeImage = async(e) =>{
+  const file = e.target.files
+  const formData = new FormData();
+    formData.append('file', file[0]);
+    formData.append('upload_preset', 'i6jgs1ps');
+    try {
+      const response = await axios.post(
+        `https://api.cloudinary.com/v1_1/dwm0cabq4/image/upload`, // Replace 'cloudName' with your Cloudinary cloud name
+        formData
+      );
+      setAvatar( response.data.secure_url)
+    } catch (error) {
+      console.error('Error uploading images: ', error);
+    }
+}
 const onSubmit = async (product:IProduct) =>{
     try {
       // const galleryArray = product.gallery?.split(',').slice(0, 500);
     const tagsArray = product.tags?.split(',').slice(0, 500);
      product.gallery = images
     product.tags = tagsArray;
-    
+    product.image = avatar
+    console.log(product)
     mutation.mutate(product)
     } catch (error) {
       console.log(error)
@@ -71,20 +87,27 @@ const onSubmit = async (product:IProduct) =>{
                   Ảnh
                 </label>
                 <input
-                  type="text"
+                  type="file"
                   {...register('image',{required:true})}
                   className="form-control"
                   id="exampleInputPassword1"
+                  onChange={(e)=>onChangeImage(e)}
                 />
-                  {errors.image && errors.image.type =="required" && (  <div id="emailHelp" className="form-text text-danger"> Không để trống</div>)}
+                <img width="130px" src={avatar?avatar:""}/>
+        
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">
-                Gallery(mỗi ảnh cách nhau bởi dấy phảy ",")
+                Gallery
                 </label>
-                <input type="file" onChange={(e)=>onChangeImage(e)}  multiple />
-               {/* <textarea {...register('gallery',{required:true})}id="" cols={40} rows={5}></textarea>
-                {errors.gallery && errors.gallery.type =="required" && (  <div id="emailHelp" className="form-text text-danger"> Không để trống</div>)} */}
+                <input type="file" onChange={(e)=>onChangeGallery(e)}  multiple />
+                <div className="row">
+                   {images?.map((item,i)=>(
+                    <div className="col-3" key={i}>
+                    <img src={item} width='80px'/>
+                   </div>
+                   ))}
+                </div>
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">

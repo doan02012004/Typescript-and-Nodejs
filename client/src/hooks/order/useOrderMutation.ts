@@ -13,7 +13,7 @@ const useOrderMutation = () => {
                 console.log(error)
             }
         },
-        onSuccess: ()=>{
+        onSuccess:(res)=>{
             queryClient.invalidateQueries({queryKey:["ORDER_KEY"]})
         }
     })

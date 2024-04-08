@@ -32,7 +32,8 @@ export const getAllOrder = async()=>{
 
 export const updateOrderStatus = async(options:{id:number|string, status:string})=>{
     try {
-        await instance.put(`/orders/status/${options.id}`, options)
+      const res =  await instance.put(`/orders/status/${options.id}`, options)
+        return res.data
     } catch (error) {
         console.log(error)
     }
