@@ -68,7 +68,7 @@ const Related = ({product}:Props) => {
         })}
       </div>
       <div className="related-showmore">
-        <button className="related-showmore_btn">Show More</button>
+        <Link to='/shop'><button className="related-showmore_btn">Show More</button></Link>
       </div>
     </div>
   </div>

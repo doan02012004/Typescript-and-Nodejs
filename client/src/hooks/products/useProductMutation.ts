@@ -12,10 +12,12 @@ const useProductMutation = (action:string) => {
                 switch (action) {
                     case "addproducts":
                             await addProduct(product)
+                            alert('Thêm thành công')
                             navigate("/admin/products")
                         break;
                     case "updateproducts":
                         await updateProducts(product)
+                        alert('Cập nhật thành công')
                           navigate("/admin/products")
                         break;
                     case "deleteproducts":

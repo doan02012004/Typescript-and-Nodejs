@@ -102,7 +102,7 @@ const onSubmit = async (product:IProduct) =>{
                 </label>
                 <input
                   type="file"
-                  {...register('image',{required:true})}
+                  {...register('image')}
                   className="form-control"
                   id="exampleInputPassword1"
                   onChange={(e)=>onChangeImage(e)}

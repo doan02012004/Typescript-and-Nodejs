@@ -39,7 +39,7 @@ const Carts = () => {
                          <span className="cart-table_name">{cart.name}</span>
                        </td>
                        <td>
-                         <span className="cart-table_price">{cart.price.toLocaleString('vi-VN')} đ</span>
+                         <span className="cart-table_price">{(cart.price).toLocaleString('vi-VN')} đ</span>
                        </td>
                        <td className="cart-table_quantity">
                          <input className="cart-table_input" type="text" value={cart.quantity} />
@@ -128,11 +128,11 @@ const Carts = () => {
              <h1 className="cart-carttotal_title">Cart Totals</h1>
              <div className="cart-carttotal-item">
                <span className="cart-carttotal-item_name">Subtotal</span>
-               <span className="cart-carttotal-item_price">{totalCost.toLocaleString('vi-VN')} đ</span>
+               <span className="cart-carttotal-item_price">{totalCost?.toLocaleString('vi-VN')} đ</span>
              </div>
              <div className="cart-carttotal-item">
                <span className="cart-carttotal-item_name">Total</span>
-               <span className="cart-carttotal-item_total">{totalCost.toLocaleString('vi-VN')} đ</span>
+               <span className="cart-carttotal-item_total">{totalCost?.toLocaleString('vi-VN')} đ</span>
              </div>
              <div className="cart-carttotal-checkout">
                <a href="/order"><button className="cart-carttotal_btn">Check Out</button></a>

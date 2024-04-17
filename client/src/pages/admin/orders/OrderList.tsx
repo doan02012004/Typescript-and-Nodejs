@@ -14,7 +14,7 @@ const OrderList = () => {
     }
   return (
     <>
-     <h2>Danh Sách Sản Phẩm</h2>
+     <h2>Danh Sách Đơn Hàng</h2>
      <input className="form-control m-5" type="text" placeholder="Search" aria-label="Search" style={{width:300}} onChange={(e)=>onHandleSearch(e)}/>
       <div className="table-responsive small">
         <table className="table table-striped table-sm">

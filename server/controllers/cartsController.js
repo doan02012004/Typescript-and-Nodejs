@@ -1,11 +1,26 @@
 const cartsModel = require('../models/Carts')
-
+const productModel = require('../models/Products')
 const getCartbyId = async(req,res)=>{
     try {
         const {userId} = req.params;
-        const cart = await cartsModel.findOne({ userId }).populate("products.productId");
+        const cart = await cartsModel.findOne({ userId });
+        // console.log(cart.products[0])
+        // .populate("products.productId")
+        for (let index = 0; index < cart.products.length; index++) {
+            const product = await productModel.findOne({_id:cart.products[index].productId});
+            if(!product){
+                const newCart =  cart.products.filter(item => item.productId != cart.products[index].productId)
+                // console.log("sản phẩm đã bị xóa" + cart.products[index].productId);
+                 await cartsModel.updateOne({ userId }, { products: newCart });
+                
+            }
+
+        }
+        // lấy dữ liệu giỏ hàng
+            cartItem = await cartsModel.findOne({ userId }).populate("products.productId");
+
         const cartData = {
-            products: cart.products.map((item) => ({
+            products: cartItem.products.map((item) => ({
                 productId: item.productId._id,
                 name: item.productId.name,
                 image: item.productId.image,

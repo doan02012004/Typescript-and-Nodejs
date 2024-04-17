@@ -55,7 +55,6 @@ const onSubmit = async (product:IProduct) =>{
      product.gallery = images
     product.tags = tagsArray;
     product.image = avatar
-    console.log(product)
     mutation.mutate(product)
     } catch (error) {
       console.log(error)
